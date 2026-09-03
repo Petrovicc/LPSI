@@ -1,0 +1,17 @@
+node_modules/
+dist/
+.work/
+index.html
+sr/
+en/
+ru/
+de/
+es/
+fr/
+zh/
+.env
+.env.local
+*.log
+lpsi-github-pages.zip
+public/sitemap.xml
+public/robots.txt

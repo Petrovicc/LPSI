@@ -1,0 +1,20 @@
+const paths = {
+  arrow: '<path d="M4 12h15m-6-6 6 6-6 6"/>',
+  diagonal: '<path d="M6 18 18 6M6 6h12v12"/>',
+  down: '<path d="m6 9 6 6 6-6"/>',
+  code: '<path d="m8 6-6 6 6 6m8-12 6 6-6 6m-3-14-2 16"/>',
+  network: '<rect x="9" y="2" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="16" y="16" width="6" height="6" rx="1"/><path d="M12 8v4H5v4m7-4h7v4"/>',
+  pulse: '<path d="M2 12h5l3-8 4 16 3-8h5"/>',
+  brain: '<path d="M12 4c-3-4-7-1-6 2-4 0-5 5-2 7-3 4 1 8 4 6 1 3 4 2 4-1V4Zm0 0c3-4 7-1 6 2 4 0 5 5 2 7 3 4-1 8-4 6-1 3-4 2-4-1M6 6c0 2 1 3 3 3m-5 4c2-1 4 0 4 2m10-9c0 2-1 3-3 3m5 4c-2-1-4 0-4 2"/>',
+  bolt: '<path d="m13 2-9 12h7l-1 8 10-13h-8l1-7Z"/>',
+  cube: '<path d="m12 2 10 5v10l-10 5-10-5V7l10-5Zm0 10 10-5M12 12 2 7m10 5v10M7 4.5l10 5"/>',
+  chart: '<path d="M3 3v18h18M7 15l4-5 4 3 6-8"/><circle cx="7" cy="15" r="1"/><circle cx="11" cy="10" r="1"/>',
+  book: '<path d="M12 5c-3-3-7-2-10-2v16c4-1 7-1 10 2 3-3 6-3 10-2V3c-3 0-7-1-10 2Zm0 0v16"/>',
+  people: '<circle cx="9" cy="7" r="4"/><path d="M2 22v-3c0-7 14-7 14 0v3M17 3c6 0 6 8 0 8m2 4c3 1 3 4 3 7"/>',
+  globe: '<circle cx="12" cy="12" r="10"/><ellipse cx="12" cy="12" rx="4" ry="10"/><path d="M2 12h20"/>',
+  spark: '<path d="m12 2 3 7 7 3-7 3-3 7-3-7-7-3 7-3 3-7Z"/>',
+  pin: '<path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/>',
+  mail: '<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 5 10 8L22 5"/>',
+  check: '<path d="m5 12 4 4L19 6"/>',
+};
+export const icon = (name, className = '') => `<svg class="icon ${className}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${paths[name] || paths.code}</svg>`;

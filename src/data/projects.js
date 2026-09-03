@@ -1,0 +1,26 @@
+export const categories = ['biomedical', 'virtual', 'electrical', 'software', 'prototyping'];
+// Stable IDs connect each activity to its translations. Optional metadata is intentionally unset.
+export const projects = [
+  ['neurofeedback-mapping', 'biomedical', 'Неурофидбек симулација са мапирањем мозга', 'brain'],
+  ['cardiovr', 'virtual', 'CardioVRTool', 'pulse'],
+  ['vr-smart-grid', 'electrical', 'VR Smart Grid', 'network'],
+  ['brain-classification', 'biomedical', 'Систем за мапирање мозга и класификацију'],
+  ['neuroplasticity', 'biomedical', 'Процена нивоа неуропластичности на основу неинвазивних техника'],
+  ['physical-neurofeedback', 'biomedical', 'Неурофидбек систем са физичким излазом'],
+  ['adaptive-neurofeedback', 'biomedical', 'Неурофидбек симулација са адаптивним противницима на основу процене когнитивних параметара'],
+  ['ml-psychology', 'biomedical', 'Machine Learning-Driven Objective Parameters in Psychological Research'],
+  ['multispectral-cognition', 'biomedical', 'Cognitive Phenomena Measurement with Time Window-Based Multispectral Brain Mapping'],
+  ['learning-assessment', 'biomedical', 'Примена мултиспектралног мапирања мозга у процени процеса учења'],
+  ['vr-driving', 'virtual', 'Симулатор вожње у виртуелној реалности'],
+  ['attention-driving', 'virtual', 'Симулатор вожње са динамичким ограничењем видљивости на основу нивоа пажње'],
+  ['physiology-vr', 'virtual', 'A Cycle of Theoretical and Experimental Studies on Revealing Regularities of Human Physiological Reactions to Audiovisual Stimuli in the Virtual Reality Environment'],
+  ['remote-vr', 'virtual', 'Систем за мерење активности у виртуелној реалности са удаљеном обрадом података'],
+  ['measurement-networks', 'electrical', 'Примена рачунарских мрежа у мерно информационим системима'],
+  ['network-diagnostics', 'electrical', 'Мобилна апликација за дијагностику рачунарске мреже'],
+  ['secure-transfer', 'electrical', 'Implementation of Secure Data Transfer in Digital Interactive Psychology'],
+  ['eeg-acquisition', 'software', 'Acquisition Module of a Measurement Information System for Processing and Transfer of Electroencephalogram Signals'],
+  ['attention-platform', 'software', 'Selective Attention Test Software Platform for Cognitive Research with EEG Data Transfer'],
+  ['attention-mobile', 'software', 'Conceptual Solution for a Selective Attention Test Phone Application Design'],
+  ['mobile-eeg', 'software', 'Мобилна апликација која омогућава мерење EEG сигнала и израду психолошких тестова'],
+  ['shape-memory', 'prototyping', 'Развој система за истраживање shape-memory феномена 3Д штампе'],
+].map(([id, category, originalTitle, visual = null, metadata = {}]) => ({ id, category, originalTitle, visual, year: null, status: null, image: null, publicationUrl: null, projectUrl: null, ...metadata }));

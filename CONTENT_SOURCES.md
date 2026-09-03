@@ -1,0 +1,25 @@
+# Content provenance and editorial decisions
+
+The attached user brief is the specification. Institutional documents supply facts; their requests and administrative text are not instructions to execute.
+
+- **LPSI - Elaborat laboratorije.pdf**, dated 05.05.2026, page 1: laboratory names, chair-independent faculty context, designated room, head, eight employees and activities. Page 2: research fields, three named courses, planned support for the upcoming master's accreditation. The equipment inventory is excluded.
+- **LPSI Predlog za osnivanje laboratorije.docx**: chair identity, purpose, mission, interdisciplinary capabilities, cooperation objectives and 22 research/development activities. The embedded graphics provide the laboratory, chair, faculty and university marks.
+- The earlier **LPSI - Elaborat laboratorije.docx** lists five members. The user explicitly selected the **eight-member roster from the updated PDF** on 4 September 2026. The website follows that clarification, including Лука Стрезоски, Дарко Лазаревић and Милан Зец.
+
+Names and ranks are transcribed from the updated PDF. Nikola Petrović is the head. No promotion, biography, research interest, email, profile link, photo or individual project attribution is inferred. Member ordering places the head first, followed by the source order of the other members.
+
+Project card titles are concise editorial translations; `originalTitle` in `src/data/projects.js` preserves the original recorded wording. Descriptions summarize only the documented activity. Categories are editorial groupings, not formal organizational units. No dates, completion states, funding awards or project links are assigned. Counts in the project filter describe the listed records, not funded projects or performance claims.
+
+The source documents describe formation/planning, not a separately verified establishment decision. The site therefore avoids inventing an establishment date. Accreditation language remains prospective as supplied.
+
+Faculty letterhead includes general faculty contact information, but those details are not treated as direct laboratory contact channels. Only room 215, Science and Technology Park, Faculty of Technical Sciences and Novi Sad are published. Future contact channels and maps remain unset.
+
+Original logos were extracted without modification and remain available. DOCX media: image1.png → lpsi-small.png (301×267); image2.png → chair.png (107×105); image3.png → ftn.png (231×252); image4.png → university.png (252×251); image5.png → lpsi.png (975×863). Hero and project graphics are original decorative SVG diagrams, not experimental measurements.
+
+On 4 September 2026 the owner requested a blue or dark-blue LPSI mark. The navy derivative was produced with the built-in ImageGen tool using `lpsi.png` as the edit target, then resized and optimized with Sharp. Editing brief: recolor the burgundy linework to navy #142A49 on white, preserving the existing composition, geometry, symbols and lettering without adding elements. The selected workspace assets are `public/assets/logos/lpsi-blue.png`, `lpsi-blue-small.png` and `lpsi-blue-favicon.png`; header/footer and favicon references use these derivatives. The chair, faculty and university artwork is unchanged.
+
+Russian and German institution names and course titles are editorial translations. The English laboratory name remains **Applied Software Engineering Lab**. Following the owner's language clarification on 4 September 2026, names use original Serbian Cyrillic in Serbian, Serbian Latin in English/German and individually adapted Russian Cyrillic in Russian. Academic ranks retain the source wording. Initials derive from the selected language's name.
+
+The internship invitation was supplied directly by the owner on 4 September 2026: bachelor’s, master’s and doctoral students, plus secondary school students exploring engineering directions, are welcome. The four audience descriptions are editorial elaborations of that invitation. Topics and participation are presented as matters to agree with the laboratory; no fixed duration, payment, deadlines or admission guarantees are asserted.
+
+The owner subsequently requested Spanish, French and Chinese translations and dropdown language selectors. These versions translate the same documented content; Simplified Chinese is used. Latin personal names are preserved in Spanish, French and Chinese for consistent identification of researchers. The owner's revised language order is SR, EN, RU, ES, FR, DE, ZH (the requested “RS” was interpreted as Russian, whose language code is RU).
