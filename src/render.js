@@ -1,6 +1,7 @@
 import { icon } from './components/icons.js';
 import { network, projectVisual } from './components/network.js';
 import { team, memberInitials } from './data/team.js';
+import { memberTitle } from './data/titles.js';
 import { projects, categories } from './data/projects.js';
 import { research } from './data/research.js';
 import { site, languages, languageNames, navigation } from './data/site.js';
@@ -27,7 +28,7 @@ export function render(t, { root = false, url = '' } = {}) {
   }).join('');
   const teamCards = team.map(m => `<article class="person-card${m.head ? ' person-head' : ''}">
     <div class="avatar" aria-hidden="true">${m.photo ? `<img src="${asset(e(m.photo))}" alt="" width="84" height="84" loading="lazy">` : `<span>${e(memberInitials(m,t.lang))}</span>`}</div>
-    <p class="academic-title" lang="sr">${e(m.title)}</p><h3 lang="${t.lang === 'zh' ? 'sr-Latn' : t.lang}">${e(m.name[t.lang])}</h3><p class="person-role">${m.head ? `<span class="role-dot"></span>` : ''}${e(m.head ? t.team.head : t.team.member)}</p>
+    <p class="academic-title" lang="${t.lang}">${e(memberTitle(m,t.lang))}</p><h3 lang="${t.lang === 'zh' ? 'sr-Latn' : t.lang}">${e(m.name[t.lang])}</h3><p class="person-role">${m.head ? `<span class="role-dot"></span>` : ''}${e(m.head ? t.team.head : t.team.member)}</p>
     ${m.researchInterests ? `<p class="interests"><span class="sr-only">${e(t.ui.interests)}: </span>${e(localized(m.researchInterests, t.lang))}</p>` : ''}
     ${Object.entries({ email: t.ui.email, orcid: 'ORCID', googleScholar: 'Google Scholar', researchGate: 'ResearchGate', linkedIn: 'LinkedIn', webpage: t.ui.profile }).some(([key]) => m[key]) ? `<div class="person-links">${Object.entries({ email: t.ui.email, orcid: 'ORCID', googleScholar: 'Google Scholar', researchGate: 'ResearchGate', linkedIn: 'LinkedIn', webpage: t.ui.profile }).filter(([key])=> m[key]).map(([key,label])=>`<a href="${safeUrl(key === 'email' ? `mailto:${m[key]}` : m[key])}" aria-label="${e(label)} — ${e(m.name[t.lang])}">${e(label)} ${icon('diagonal')}</a>`).join('')}</div>` : ''}
   </article>`).join('');

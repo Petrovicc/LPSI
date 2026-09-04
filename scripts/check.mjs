@@ -3,6 +3,7 @@ import { readFile, stat } from 'node:fs/promises';
 import { resolve, dirname, relative } from 'node:path';
 import { languages, navigation } from '../src/data/site.js';
 import { team } from '../src/data/team.js';
+import { memberTitle } from '../src/data/titles.js';
 import { projects, categories } from '../src/data/projects.js';
 import { research } from '../src/data/research.js';
 
@@ -31,6 +32,15 @@ for (const route of ['', ...languages]) {
   assert(html.includes(`<html lang="${route || 'sr'}"`), `${route}: wrong language`);
   assert.equal((html.match(/<h1\b/g)||[]).length, 1, `${route}: one H1 required`);
   assert.equal((html.match(/class="person-card/g)||[]).length, team.length);
+  const titleLanguage = route || 'sr';
+  const renderedTitles = [...html.matchAll(/<p class="academic-title" lang="([^"]+)">([^<]*)<\/p>/g)];
+  assert.equal(renderedTitles.length, team.length, `${route}: all member titles must be localized`);
+  renderedTitles.forEach((match, index) => {
+    assert.equal(match[1], titleLanguage, `${route}: wrong title language`);
+    assert(memberTitle(team[index], titleLanguage)?.trim(), `${route}: missing title translation`);
+    assert.equal(match[2], memberTitle(team[index], titleLanguage), `${route}: wrong member title`);
+    if (!['sr','ru'].includes(titleLanguage)) assert(!/[\u0400-\u04ff]/u.test(match[2]), `${route}: Cyrillic title leaked`);
+  });
   assert.equal((html.match(/class="project-card/g)||[]).length, projects.length);
   const languageMenus = [...html.matchAll(/<nav class="language-options"[^>]*>(.*?)<\/nav>/gs)];
   assert.equal(languageMenus.length, 2, `${route}: header and footer language menus required`);

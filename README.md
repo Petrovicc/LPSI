@@ -61,6 +61,7 @@ For a custom domain, configure it in GitHub Pages and DNS, then add **`public/CN
 | All translated text, project titles/descriptions, courses and location | `src/locales/sr.js`, `en.js`, `ru.js`, `es.js`, `fr.js`, `de.js`, `zh.js` |
 | Internship invitation and audience groups in all languages | `src/locales/internships.js` |
 | Team and optional profile fields | `src/data/team.js` |
+| Academic title translations and personal grammatical forms | `src/data/titles.js` |
 | Activities, original titles, categories and optional metadata | `src/data/projects.js` |
 | Research order and icons | `src/data/research.js` |
 | Contact channels, canonical URL, partner data and navigation | `src/data/site.js` |
@@ -68,7 +69,7 @@ For a custom domain, configure it in GitHub Pages and DNS, then add **`public/CN
 | Responsive layout and motion | `src/styles.css` |
 | Filters, language preference and navigation | `src/main.js` |
 
-Keep the same translation keys in all seven files. `npm run check` detects mismatches and missing text. Personal names use Serbian Cyrillic for Serbian, Serbian Latin for English/Spanish/French/German/Chinese and adapted Russian Cyrillic for Russian. The Chinese page marks Latin personal names with `lang="sr-Latn"`. Initials follow the selected name. Academic titles retain the original institutional wording, marked with `lang="sr"`; roles and interface labels are translated. Project brand names and the official English laboratory name remain proper nouns.
+Keep the same translation keys in all seven files. `npm run check` detects mismatches and missing text. Personal names use Serbian Cyrillic for Serbian, Serbian Latin for English/Spanish/French/German/Chinese and adapted Russian Cyrillic for Russian. The Chinese page marks Latin personal names with `lang="sr-Latn"`. Initials follow the selected name. Academic titles, roles and interface labels follow the page language. The canonical Serbian rank stays in each member record; `src/data/titles.js` supplies its translations and personal grammatical forms. Project brand names and the official English laboratory name remain proper nouns.
 
 ### Team members
 
@@ -87,6 +88,8 @@ Add/remove a record in `src/data/team.js`. Exactly one record should have `head:
 ```
 
 Photos are relative to `public/assets/`. ORCID, profile and publication fields take complete confirmed HTTPS URLs. Without a photo, initials are derived from the localized name. Supply and review every language form when adding a member. The grid adapts when members are added or removed.
+
+Use a confirmed Serbian rank as `title`; add its seven translations in `src/data/titles.js` if it is new. The build checks rendered title text and language attributes for every member on every route.
 
 ### Research activities
 

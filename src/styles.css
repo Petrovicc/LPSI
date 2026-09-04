@@ -1416,6 +1416,8 @@ section:focus,main:focus {
   font-size: .78rem;
   margin-bottom: 8px;
   line-height: 1.4;
+  overflow-wrap: anywhere;
+  hyphens: auto;
 }
 
 .person-card h3 {

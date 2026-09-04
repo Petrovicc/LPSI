@@ -16,6 +16,8 @@ The owner's follow-up changes were also verified: all eight names and initials f
 
 The seven-language revision passes the production build and static checks for all eight entry points. Header and footer language menus are checked against the configured order. French was visually reviewed on desktop and at 320 CSS pixels, Spanish at 390 pixels, and Chinese at 320 pixels. No page or card overflow was found. The dropdown fits the narrow viewport; Escape closes it and restores summary focus. Language switching preserves the selected section.
 
+Academic title localization is checked for all eight members in all seven languages, including the title's HTML language attribute and absence of Cyrillic titles on Latin/Chinese pages. The English team section was visually reviewed on desktop; longer German and Russian titles were checked at 390 CSS pixels with no clipping or horizontal overflow. The production build and checks pass.
+
 Final shared assets: approximately 33.6 kB CSS and 5.2 kB JavaScript before compression. All fonts use the local system stack; no third-party requests are required by the page.
 
 GitHub Pages is configured for Actions deployment in `Petrovicc/LPSI`; the verified configured public URL is `https://petrovicc.github.io/LPSI/`. Remote deployment status is available in the repository's Actions history. A Lighthouse score or formal accessibility certification is not claimed. Direct contact channels and a custom domain remain configurable.

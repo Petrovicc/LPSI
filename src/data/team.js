@@ -1,6 +1,6 @@
 // Names and academic ranks are transcribed from the supplied institutional record.
 // Store names explicitly per language; Russian uses practical transcription, not a letter swap.
-// Academic ranks retain the original institutional wording.
+// Canonical Serbian ranks are localized through titles.js when rendered.
 export const team = [
   { id: 'nikola-petrovic', name: { sr: 'Никола Петровић', en: 'Nikola Petrović', de: 'Nikola Petrović', ru: 'Никола Петрович' }, title: 'доц. др', head: true },
   { id: 'luka-strezoski', name: { sr: 'Лука Стрезоски', en: 'Luka Strezoski', de: 'Luka Strezoski', ru: 'Лука Стрезоски' }, title: 'проф. др', head: false },
