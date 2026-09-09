@@ -14,6 +14,8 @@ The source documents describe formation/planning, not a separately verified esta
 
 Faculty letterhead includes general faculty contact information, but those details are not treated as direct laboratory contact channels. Only room 215, Science and Technology Park, Faculty of Technical Sciences and Novi Sad are published. Future contact channels and maps remain unset.
 
+On 9 September 2026 the owner supplied the official institutional destinations used by the linked marks and names: Chair of Power Engineering and Applied Software Engineering — `https://www.eepsi.ftn.uns.ac.rs/`; Faculty of Technical Sciences — `https://ftn.uns.ac.rs/`; University of Novi Sad — `https://www.uns.ac.rs/`. All three addresses returned HTTP 200 when integrated.
+
 Original logos were extracted without modification and remain available. DOCX media: image1.png → lpsi-small.png (301×267); image2.png → chair.png (107×105); image3.png → ftn.png (231×252); image4.png → university.png (252×251); image5.png → lpsi.png (975×863). Hero and project graphics are original decorative SVG diagrams, not experimental measurements.
 
 On 4 September 2026 the owner requested a blue or dark-blue LPSI mark. The navy derivative was produced with the built-in ImageGen tool using `lpsi.png` as the edit target, then resized and optimized with Sharp. Editing brief: recolor the burgundy linework to navy #142A49 on white, preserving the existing composition, geometry, symbols and lettering without adding elements. The selected workspace assets are `public/assets/logos/lpsi-blue.png`, `lpsi-blue-small.png` and `lpsi-blue-favicon.png`; header/footer and favicon references use these derivatives. The chair, faculty and university artwork is unchanged.

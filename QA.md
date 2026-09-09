@@ -18,6 +18,8 @@ The seven-language revision passes the production build and static checks for al
 
 Academic title localization is checked for all eight members in all seven languages, including the title's HTML language attribute and absence of Cyrillic titles on Latin/Chinese pages. The English team section was visually reviewed on desktop; longer German and Russian titles were checked at 390 CSS pixels with no clipping or horizontal overflow. The production build and checks pass.
 
-Final shared assets: approximately 33.6 kB CSS and 5.2 kB JavaScript before compression. All fonts use the local system stack; no third-party requests are required by the page.
+The three institutional logo-and-name pairs were checked as unified links on all generated routes. Their exact HTTPS destinations, new-tab behavior and `noopener noreferrer` relationship are covered by the static checks. All three official destinations returned HTTP 200, and the Serbian desktop preview showed no overflow or browser-console errors.
+
+Final shared assets: approximately 33.8 kB CSS and 5.2 kB JavaScript before compression. All fonts use the local system stack; no third-party requests are required by the page.
 
 GitHub Pages is configured for Actions deployment in `Petrovicc/LPSI`; the verified configured public URL is `https://petrovicc.github.io/LPSI/`. Remote deployment status is available in the repository's Actions history. A Lighthouse score or formal accessibility certification is not claimed. Direct contact channels and a custom domain remain configurable.

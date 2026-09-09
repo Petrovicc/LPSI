@@ -748,6 +748,11 @@ section:focus,main:focus {
   font-size: .8rem;
   color: #607086;
   line-height: 1.6;
+  transition: color .2s ease;
+}
+
+.affiliation-item:hover {
+  color: var(--navy);
 }
 
 .affiliation-item.chair {
@@ -758,6 +763,11 @@ section:focus,main:focus {
   flex-shrink: 0;
   object-fit: contain;
   opacity: .85;
+  transition: opacity .2s ease;
+}
+
+.affiliation-item:hover img,.affiliation-item:focus-visible img {
+  opacity: 1;
 }
 
 .affiliation-item span {

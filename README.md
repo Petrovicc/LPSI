@@ -64,7 +64,7 @@ For a custom domain, configure it in GitHub Pages and DNS, then add **`public/CN
 | Academic title translations and personal grammatical forms | `src/data/titles.js` |
 | Activities, original titles, categories and optional metadata | `src/data/projects.js` |
 | Research order and icons | `src/data/research.js` |
-| Contact channels, canonical URL, partner data and navigation | `src/data/site.js` |
+| Contact channels, canonical URL, institutional links, partner data and navigation | `src/data/site.js` |
 | Shared sections and HTML metadata | `src/render.js` |
 | Responsive layout and motion | `src/styles.css` |
 | Filters, language preference and navigation | `src/main.js` |
@@ -112,6 +112,8 @@ Available category IDs are in `categories`; adding a category also requires its 
 `site.email`, `phone`, `mapUrl`, and `contactUrl` are intentionally `null`. Populate only confirmed values; corresponding links then appear automatically. Contact CTA buttons currently lead to the on-page location and contact section. No form pretends to submit a message.
 
 `site.partners` is empty. Future entries use `{ name: { sr, en, ru, es, fr, de, zh }, logo: 'partners/logo.svg', url: 'https://confirmed-url' }`. Nothing is shown until genuine partners are added.
+
+`site.affiliations` contains the confirmed official URLs for the chair, Faculty and University. Each logo-and-name pair is one accessible external link and opens in a new tab.
 
 ### Logos
 

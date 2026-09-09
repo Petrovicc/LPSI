@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { readFile, stat } from 'node:fs/promises';
 import { resolve, dirname, relative } from 'node:path';
-import { languages, navigation } from '../src/data/site.js';
+import { site, languages, navigation } from '../src/data/site.js';
 import { team } from '../src/data/team.js';
 import { memberTitle } from '../src/data/titles.js';
 import { projects, categories } from '../src/data/projects.js';
@@ -42,6 +42,10 @@ for (const route of ['', ...languages]) {
     if (!['sr','ru'].includes(titleLanguage)) assert(!/[\u0400-\u04ff]/u.test(match[2]), `${route}: Cyrillic title leaked`);
   });
   assert.equal((html.match(/class="project-card/g)||[]).length, projects.length);
+  assert.equal((html.match(/<a class="affiliation-item/g)||[]).length, 3, `${route}: three linked institutional marks required`);
+  for (const url of Object.values(site.affiliations)) {
+    assert(html.includes(`href="${url}" target="_blank" rel="noopener noreferrer"`), `${route}: missing safe affiliation link ${url}`);
+  }
   const languageMenus = [...html.matchAll(/<nav class="language-options"[^>]*>(.*?)<\/nav>/gs)];
   assert.equal(languageMenus.length, 2, `${route}: header and footer language menus required`);
   for (const menu of languageMenus) {

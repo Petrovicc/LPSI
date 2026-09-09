@@ -11,4 +11,9 @@ export const site = {
   mapUrl: null,
   contactUrl: null,
   partners: [],
+  affiliations: {
+    chair: 'https://www.eepsi.ftn.uns.ac.rs/',
+    faculty: 'https://ftn.uns.ac.rs/',
+    university: 'https://www.uns.ac.rs/',
+  },
 };
