@@ -82,12 +82,14 @@ Add/remove a record in `src/data/team.js`. Exactly one record should have `head:
   title: 'Confirmed academic title', head: false,
   photo: 'people/confirmed-photo.jpg',
   researchInterests: { sr: '...', en: '...', ru: '...', es: '...', fr: '...', de: '...', zh: '...' },
-  email: null, orcid: null, googleScholar: null,
+  email: 'confirmed.name@uns.ac.rs',
+  ftnProfileUrl: 'https://ftn.uns.ac.rs/0000/confirmed-profile',
+  orcid: null, googleScholar: null,
   researchGate: null, linkedIn: null, webpage: null
 }
 ```
 
-Photos are relative to `public/assets/`. ORCID, profile and publication fields take complete confirmed HTTPS URLs. Without a photo, initials are derived from the localized name. Supply and review every language form when adding a member. The grid adapts when members are added or removed.
+Photos are relative to `public/assets/`. FTN, ORCID, profile and publication fields take complete confirmed HTTPS URLs. Institutional email and FTN profile links appear as accessible actions in the member card; external profiles open in a new tab. Without a photo, initials are derived from the localized name. Supply and review every language form when adding a member. The grid adapts when members are added or removed.
 
 Use a confirmed Serbian rank as `title`; add its seven translations in `src/data/titles.js` if it is new. The build checks rendered title text and language attributes for every member on every route.
 
@@ -109,7 +111,7 @@ Available category IDs are in `categories`; adding a category also requires its 
 
 ### Contact and partners
 
-`site.email`, `phone`, `mapUrl`, and `contactUrl` are intentionally `null`. Populate only confirmed values; corresponding links then appear automatically. Contact CTA buttons currently lead to the on-page location and contact section. No form pretends to submit a message.
+`site.email` contains the owner-confirmed LPSI contact address. It drives the contact section, collaboration CTA, footer and organization structured data. `phone`, `mapUrl`, and `contactUrl` remain `null`; populate them only with confirmed public values. No form pretends to submit a message.
 
 `site.partners` is empty. Future entries use `{ name: { sr, en, ru, es, fr, de, zh }, logo: 'partners/logo.svg', url: 'https://confirmed-url' }`. Nothing is shown until genuine partners are added.
 

@@ -4,15 +4,15 @@ The attached user brief is the specification. Institutional documents supply fac
 
 - **LPSI - Elaborat laboratorije.pdf**, dated 05.05.2026, page 1: laboratory names, chair-independent faculty context, designated room, head, eight employees and activities. Page 2: research fields, three named courses, planned support for the upcoming master's accreditation. The equipment inventory is excluded.
 - **LPSI Predlog za osnivanje laboratorije.docx**: chair identity, purpose, mission, interdisciplinary capabilities, cooperation objectives and 22 research/development activities. The embedded graphics provide the laboratory, chair, faculty and university marks.
-- The earlier **LPSI - Elaborat laboratorije.docx** lists five members. The user explicitly selected the **eight-member roster from the updated PDF** on 4 September 2026. The website follows that clarification, including Лука Стрезоски, Дарко Лазаревић and Милан Зец.
+- The earlier **LPSI - Elaborat laboratorije.docx** lists five members. The updated PDF later supplied eight names. On 17 September 2026 the owner provided a new, explicit website roster of five members: Aleksandar Selakov, Milana Bojanić, Nikola Petrović, Slađana Turudić and Filip Đorđević. This latest instruction supersedes the earlier eight-member selection for the public website.
 
-Names and ranks are transcribed from the updated PDF. Nikola Petrović is the head. No promotion, biography, research interest, email, profile link, photo or individual project attribution is inferred. Member ordering places the head first, followed by the source order of the other members.
+Names and ranks follow the owner-approved roster. Nikola Petrović is the head. The FTN employee pages supplied by the owner were checked on 17 September 2026 and are the source for the five official profile links and institutional `@uns.ac.rs` addresses. No biography, research interest, photo, private phone or individual project attribution is inferred. Member ordering follows the latest owner instruction.
 
 Project card titles are concise editorial translations; `originalTitle` in `src/data/projects.js` preserves the original recorded wording. Descriptions summarize only the documented activity. Categories are editorial groupings, not formal organizational units. No dates, completion states, funding awards or project links are assigned. Counts in the project filter describe the listed records, not funded projects or performance claims.
 
 The source documents describe formation/planning, not a separately verified establishment decision. The site therefore avoids inventing an establishment date. Accreditation language remains prospective as supplied.
 
-Faculty letterhead includes general faculty contact information, but those details are not treated as direct laboratory contact channels. Only room 215, Science and Technology Park, Faculty of Technical Sciences and Novi Sad are published. Future contact channels and maps remain unset.
+Faculty letterhead includes general faculty contact information, but those details are not treated as direct laboratory contact channels. Room 215, Science and Technology Park, Faculty of Technical Sciences and Novi Sad remain published. The owner confirmed `petrovicnikola@uns.ac.rs` as the general LPSI contact address on 17 September 2026. No general or private telephone number is published.
 
 On 9 September 2026 the owner supplied the official institutional destinations used by the linked marks and names: Chair of Power Engineering and Applied Software Engineering — `https://www.eepsi.ftn.uns.ac.rs/`; Faculty of Technical Sciences — `https://ftn.uns.ac.rs/`; University of Novi Sad — `https://www.uns.ac.rs/`. All three addresses returned HTTP 200 when integrated.
 

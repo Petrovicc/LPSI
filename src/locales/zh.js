@@ -6,7 +6,7 @@ export default {
   institution: { university: '诺维萨德大学', faculty: '技术科学学院', chair: '电力工程与应用软件工程教研室', city: '塞尔维亚 · 诺维萨德' },
   lab: '应用软件工程实验室', shortLab: '应用软件工程',
   nav: { internships: '实习', home: '首页', about: '关于我们', research: '研究领域', projects: '项目', education: '教学', team: '团队', collaboration: '合作', contact: '联系' },
-  ui: { skip: '跳至正文', menu: '打开菜单', closeMenu: '关闭菜单', navigation: '主导航', language: '选择语言', logo: '标志', all: '全部领域', filter: '筛选研究活动', showMore: '查看全部活动', showLess: '收起列表', results: '显示 {shown} 项，共 {total} 项活动', backTop: '返回顶部', profile: '个人主页', publication: '出版物', project: '项目网站', map: '在地图中查看', email: '电子邮箱', phone: '电话', contact: '联系我们', interests: '研究兴趣', partners: '合作机构' },
+  ui: { skip: '跳至正文', menu: '打开菜单', closeMenu: '关闭菜单', navigation: '主导航', language: '选择语言', logo: '标志', all: '全部领域', filter: '筛选研究活动', showMore: '查看全部活动', showLess: '收起列表', results: '显示 {shown} 项，共 {total} 项活动', backTop: '返回顶部', profile: '个人主页', ftnProfile: 'FTN 官方主页', publication: '出版物', project: '项目网站', map: '在地图中查看', email: '电子邮箱', phone: '电话', contact: '联系我们', interests: '研究兴趣', partners: '合作机构' },
   hero: { eyebrow: 'LPSI / APPLIED SOFTWARE ENGINEERING LAB', title: '连接知识。', accent: '创造解决方案。', intro: '以软件工程服务科学、产业与社会。在这里，不同学科相遇，想法不断发展，新知识逐渐形成。', primary: '探索我们的研究', secondary: '认识团队', visualLabel: '相互连接的学科', center: '软件', centerSecond: '工程', nodes: ['医学', '认知科学', '电气工程', '教育', '虚拟现实', '产业'], bottom: ['跨学科思维', '研究与开发', '知识付诸实践'], scroll: '了解实验室' },
   about: { eyebrow: '01 / 关于实验室', title: '学科交汇。', accent: '开启新的可能。', intro: 'ASE Lab 将软件工程与不同科学和专业领域面临的挑战相连接。实验室隶属于技术科学学院，为教学、研究、软件开发与专业合作提供支持。', pillars: [['教学', '通过团队项目、实验与指导，将理论转化为实践。'], ['研究', '跨学科方法提出新的问题，连接不同的知识领域。'], ['产业', '运用科学知识和软件解决方案，应对实际系统中的挑战。']], missionTitle: '我们的目标', goals: [['连接学科', '通过跨领域合作开发软件解决方案。'], ['鼓励学生参与', '在合作项目中主动参与并学习。'], ['建立合作', '为国内外研究项目奠定基础。'], ['促进创新', '让更多人了解科学，并将新想法付诸实践。'], ['支持研究', '支持本科、硕士和博士阶段的实验研究。'], ['分享知识', '推动教育、研究与产业之间的持续交流。']] },
   research: { eyebrow: '02 / 研究领域', title: '共同的基础。', accent: '多元的探索方向。', intro: '从生理信号到基础设施系统，软件连接着不同学科。', items: {
@@ -44,7 +44,7 @@ export default {
     'shape-memory': ['形状记忆研究', '研究用于生物医学和生物力学应用的三维形状与打印参数。'],
   } },
   education: { eyebrow: '04 / 教学', title: '知识', accent: '在实践中成长。', intro: '通过实践工作、合作解决问题和研究指导，实验室将教学与研究相结合。', paths: [['实践教学', '开展计算机练习，并使用实际的软件与基础设施系统。'], ['学生项目', '通过团队合作应对跨学科挑战，将解决方案从构思推进到应用。'], ['科研指导', '为本科毕业设计、硕士论文和博士论文提供研究与实验工作支持。']], coursesTitle: '实验室支持的课程', courses: ['计算机网络在基础设施系统中的应用', '基础设施系统中的工业通信协议', '数据采集与控制系统'], future: '实验室还计划支持应用软件工程硕士项目为新一轮认证而筹备的课程。' },
-  team: { eyebrow: '06 / 实验室团队', title: '不同的专长。', accent: '共同的好奇心。', intro: '团队由教师、助教和技术人员组成，在技术科学学院连接教学、研究与软件工程。', head: '实验室负责人', member: '实验室成员' },
+  team: { eyebrow: '06 / 实验室团队', title: '不同的专长。', accent: '共同的好奇心。', intro: '团队由教师与助教组成，在技术科学学院连接教学、研究与软件工程。', head: '实验室负责人', member: '实验室成员' },
   collaboration: { eyebrow: '07 / 合作', title: '好的研究', accent: '始于交流。', intro: '我们欢迎与国内外实验室、大学、学院、研究所、研究中心及企业开展合作。', tags: ['联合研究项目', '知识与方法交流', '学生指导', '多学科研究'], cta: '希望与我们合作？', button: '交流合作想法' },
   contact: { eyebrow: '08 / 联系', title: '让您的下一个想法', accent: '在这里起步。', location: '实验室位置', address: ['215 室', '科学技术园', '技术科学学院', '诺维萨德'], note: '官方联系方式将在确认后公布。', availability: '联系方式', visit: '科学技术园 · 诺维萨德' },
   footer: { description: '以软件工程连接不同学科。', explore: '探索', research: '研究', rights: '保留所有权利。', signature: '教学。研究。应用。' },

@@ -1369,11 +1369,13 @@ section:focus,main:focus {
   padding: 28px 23px;
   background: #fff;
   position: relative;
+  display: flex;
+  flex-direction: column;
   transition: border-color .25s,transform .25s;
   min-width: 0;
 }
 
-.person-card:hover {
+.person-card:hover,.person-card:focus-within {
   border-color: #b6cadc;
   transform: translateY(-3px);
 }
@@ -1462,16 +1464,36 @@ section:focus,main:focus {
 
 .person-links {
   display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin-top: 16px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 20px;
   font-size: .75rem;
+  border-top: 1px solid #e8eef4;
 }
 
 .person-links a {
   display: flex;
   align-items: center;
   gap: 5px;
+  max-width: 100%;
+  color: #3f6483;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+  transition: color .2s;
+}
+
+.person-links a:hover {
+  color: var(--teal);
+}
+
+.person-profile-link .icon {
+  margin-left: 2px;
+}
+
+.person-email-link .icon {
+  flex: 0 0 auto;
 }
 
 .person-links .icon {
@@ -1754,6 +1776,12 @@ section:focus,main:focus {
 
 .footer-links a:hover,.footer-contact>a:hover {
   color: var(--teal);
+}
+
+.footer-email {
+  display: block;
+  margin-top: 12px;
+  overflow-wrap: anywhere;
 }
 
 .footer-languages {

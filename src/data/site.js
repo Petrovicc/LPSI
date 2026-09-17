@@ -6,7 +6,7 @@ export const site = {
   // Set the full public URL, including a repository path if applicable, before deployment.
   // A build-time SITE_URL environment variable overrides this value.
   url: 'https://petrovicc.github.io/LPSI/',
-  email: null,
+  email: 'petrovicnikola@uns.ac.rs',
   phone: null,
   mapUrl: null,
   contactUrl: null,

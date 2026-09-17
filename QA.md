@@ -1,25 +1,13 @@
-# Verification — 4 September 2026
+# Verification — 17 September 2026
 
-- Production build succeeds without warnings. No server bundle or backend is included.
-- `npm run check` passes for the root and all four language routes: full translation key parity, eight team members, one head, 22 activities, IDs, anchor targets, structured data and all local asset references.
-- All five project filters were exercised in the browser. Category totals: 8 biomedical/cognitive, 5 virtual reality, 4 electrical/infrastructure, 4 software and 1 prototyping activity. Expanding the list reveals all 22; collapsing restores six. Accessible result text and expanded states update correctly.
-- All four languages were checked at 320, 768 and 1440 CSS pixels. Serbian was also visually checked at 390 pixels. Long Russian/German headings were corrected; final narrow-screen checks show no horizontal overflow or clipped headings/cards.
-- Header and footer language links use real static routes. Changing language preserves the section fragment. The selected language persists; the root correctly redirects to that saved choice.
-- Tested the production files on a plain Python static file server mounted under `/lpsi/`, without an SPA fallback. `/lpsi/sr/`, `/lpsi/en/`, `/lpsi/ru/` and `/lpsi/de/` load and refresh, with working images and shared CSS/JS. An unknown route returns HTTP 404.
-- Fixed initial deep-link positioning after the page layout settles. Direct refresh and language switching now visibly align the requested section below the sticky header. Hidden project cards are revealed when addressed directly.
-- Tested mobile menu opening, section navigation, closing and Escape focus restoration. Visible keyboard focus and reduced-motion CSS are implemented. Non-JavaScript HTML includes the full content and a usable mobile navigation fallback.
-- Reviewed desktop/mobile screenshots, image loading and browser console. No runtime warnings or errors were observed. Text contrast was inspected and weak auxiliary labels were darkened.
-- Confirmed canonical, hreflang and structured logo URLs with a test deployment URL. No unconfirmed production hostname is embedded. The deployment workflow obtains the actual Pages URL.
-- Equipment inventory, device models, invented contact details, project dates/statuses, partners and unsupported achievements are absent from the distributed site.
+- The production build completes without warnings and includes the root page plus all seven language routes: SR, EN, RU, ES, FR, DE and ZH.
+- `npm run check` passes translation-key parity, the owner-approved five-member roster and order, exactly one laboratory head, localized names and academic titles, 22 activities, unique IDs, anchors, local assets and structured data.
+- Every team card contains a localized official FTN profile action and a confirmed institutional `@uns.ac.rs` email action. All five external profiles use HTTPS, open in a new tab and include `noopener noreferrer`.
+- The general LPSI address `petrovicnikola@uns.ac.rs` appears in the contact section, collaboration CTA, footer and organization structured data. No telephone link is present.
+- Team interaction and layout were visually reviewed in the browser at 1280, 390 and 320 CSS pixels. The existing four-column, two-column and one-column responsive behavior remains intact, long email addresses wrap inside the cards, and no horizontal overflow occurs.
+- The English browser accessibility tree exposes all member profile and email actions with the member name in each accessible label. Keyboard focus remains covered by the existing global focus treatment; the cards use native links rather than clickable containers.
+- Browser console inspection at the narrow mobile breakpoint reports no warnings or errors.
+- The institutional header links, seven-language dropdown order, project filters, internship section, approved visual identity and all unrelated page sections remain in place.
+- The distributed site excludes equipment inventories, private telephone numbers, invented biographies, research interests, photos, external identities and unsupported project claims.
 
-The owner's follow-up changes were also verified: all eight names and initials follow the selected language; all four internship audience groups and navigation links appear in every language; the navy logo loads in the header and footer. The new section was visually reviewed on desktop and at 390 CSS pixels in German, including mobile menu navigation and card wrapping. The updated production build and static checks pass.
-
-The seven-language revision passes the production build and static checks for all eight entry points. Header and footer language menus are checked against the configured order. French was visually reviewed on desktop and at 320 CSS pixels, Spanish at 390 pixels, and Chinese at 320 pixels. No page or card overflow was found. The dropdown fits the narrow viewport; Escape closes it and restores summary focus. Language switching preserves the selected section.
-
-Academic title localization is checked for all eight members in all seven languages, including the title's HTML language attribute and absence of Cyrillic titles on Latin/Chinese pages. The English team section was visually reviewed on desktop; longer German and Russian titles were checked at 390 CSS pixels with no clipping or horizontal overflow. The production build and checks pass.
-
-The three institutional logo-and-name pairs were checked as unified links on all generated routes. Their exact HTTPS destinations, new-tab behavior and `noopener noreferrer` relationship are covered by the static checks. All three official destinations returned HTTP 200, and the Serbian desktop preview showed no overflow or browser-console errors.
-
-Final shared assets: approximately 33.8 kB CSS and 5.2 kB JavaScript before compression. All fonts use the local system stack; no third-party requests are required by the page.
-
-GitHub Pages is configured for Actions deployment in `Petrovicc/LPSI`; the verified configured public URL is `https://petrovicc.github.io/LPSI/`. Remote deployment status is available in the repository's Actions history. A Lighthouse score or formal accessibility certification is not claimed. Direct contact channels and a custom domain remain configurable.
+GitHub Pages deployment is configured through the existing Actions workflow for `Petrovicc/LPSI`. The public URL is `https://petrovicc.github.io/LPSI/`; the workflow run and live site are checked after each push to `main`.
