@@ -22,15 +22,30 @@ for (const lang of languages) {
 }
 assert.equal(new Set(projects.map(p=>p.id)).size, projects.length, 'Duplicate project ID');
 assert.equal(new Set(team.map(m=>m.id)).size, team.length, 'Duplicate member ID');
-assert.deepEqual(team.map(m=>m.id), ['aleksandar-selakov','milana-bojanic','nikola-petrovic','sladjana-turudic','filip-djordjevic'], 'Official five-member roster or order differs');
+assert.deepEqual(team.map(m=>m.id), ['luka-strezoski','aleksandar-selakov','milana-bojanic','nikola-petrovic','sladjana-turudic','filip-djordjevic','darko-lazarevic','milan-zec'], 'Official eight-member roster or order differs');
+assert.deepEqual(team.map(member => `${member.title} ${member.name.sr}`), [
+  'проф. др Лука Стрезоски',
+  'ванр. проф. др Александар Селаков',
+  'ванр. проф. др Милана Бојанић',
+  'доц. др Никола Петровић',
+  'асист. Слађана Турудић',
+  'асист. Филип Ђорђевић',
+  'асист. Дарко Лазаревић',
+  'лаборант Милан Зец',
+], 'Serbian names or titles differ from the authoritative roster');
 assert.equal(team.filter(m=>m.head).length, 1, 'Exactly one laboratory head is required');
 assert(team.find(m=>m.head).id === 'nikola-petrovic');
 assert.equal(site.email, 'petrovicnikola@uns.ac.rs', 'General laboratory email differs');
 assert.equal(site.phone, null, 'No general laboratory phone is approved');
-for (const member of team) {
+const linkedMembers = team.filter(member => member.ftnProfileUrl);
+assert.equal(linkedMembers.length, 7, 'Exactly seven members have confirmed FTN profiles');
+for (const member of linkedMembers) {
   assert.match(member.ftnProfileUrl, /^https:\/\/ftn\.uns\.ac\.rs\/\d+\//, `${member.id}: official FTN profile required`);
   assert.match(member.email, /^[^@\s]+@uns\.ac\.rs$/, `${member.id}: confirmed institutional email required`);
 }
+const milan = team.find(member => member.id === 'milan-zec');
+assert.equal(milan.ftnProfileUrl, null, 'Milan Zec must not receive an invented FTN profile');
+assert.equal(milan.email, null, 'Milan Zec must not receive an unverified email');
 
 const dist = resolve('dist');
 for (const route of ['', ...languages]) {
@@ -39,12 +54,13 @@ for (const route of ['', ...languages]) {
   assert(html.includes(`<html lang="${route || 'sr'}"`), `${route}: wrong language`);
   assert.equal((html.match(/<h1\b/g)||[]).length, 1, `${route}: one H1 required`);
   assert.equal((html.match(/class="person-card/g)||[]).length, team.length);
-  assert.equal((html.match(/class="person-profile-link"/g)||[]).length, team.length, `${route}: all FTN profile links required`);
-  assert.equal((html.match(/class="person-email-link"/g)||[]).length, team.length, `${route}: all member email links required`);
-  for (const member of team) {
+  assert.equal((html.match(/class="person-profile-link"/g)||[]).length, linkedMembers.length, `${route}: seven FTN profile links required`);
+  assert.equal((html.match(/class="person-email-link"/g)||[]).length, linkedMembers.length, `${route}: seven verified member email links required`);
+  for (const member of linkedMembers) {
     assert(html.includes(`href="${member.ftnProfileUrl}" target="_blank" rel="noopener noreferrer"`), `${route}: missing safe FTN profile for ${member.id}`);
     assert(html.includes(`href="mailto:${member.email}"`), `${route}: missing institutional email for ${member.id}`);
   }
+  assert(html.includes(milan.name[route || 'sr']), `${route}: Milan Zec card is missing`);
   assert(html.includes(`<a class="button button-primary" href="mailto:${site.email}">`), `${route}: collaboration CTA must use laboratory email`);
   assert(html.includes(`<a class="footer-email" href="mailto:${site.email}">${site.email}</a>`), `${route}: footer laboratory email required`);
   assert(!html.includes('href="tel:'), `${route}: no telephone link is approved`);
